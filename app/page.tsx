@@ -126,13 +126,13 @@ export default function HomePage() {
               </div>
 
               {/* Trust Badges */}
-              <div className="flex flex-wrap gap-6 lg:gap-10">
+              <div className="flex flex-wrap gap-6 lg:gap-10 justify-center lg:justify-start">
                 {[
                   { value: "500+", label: "Pengiriman" },
                   { value: "150+", label: "Klien Aktif" },
                   { value: "15+", label: "Rute Jawa" },
                 ].map((badge) => (
-                  <div key={badge.label}>
+                  <div key={badge.label} className="text-center lg:text-left min-w-[90px] sm:min-w-0">
                     <div className="text-2xl font-bold text-white">
                       {badge.value}
                     </div>

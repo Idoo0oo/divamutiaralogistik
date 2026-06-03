@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     siteName: "PT Diva Mutiara Logistik",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: "/favicon-logo.svg",
+  },
   alternates: {
     canonical: "https://www.divamutiaralogistik.com",
   },
