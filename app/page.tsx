@@ -74,7 +74,7 @@ const stats = [
   { value: 500, suffix: "+", label: "Pengiriman Sukses", icon: CheckCircle },
   { value: 150, suffix: "+", label: "Klien Aktif", icon: Users },
   { value: 15, suffix: "+", label: "Rute Aktif", icon: Route },
-  { value: 10, suffix: "+", label: "Tahun Pengalaman", icon: Calendar },
+  { value: 5, suffix: "+", label: "Tahun Pengalaman", icon: Calendar },
 ];
 
 export default function HomePage() {
