@@ -12,7 +12,7 @@ const navLinks = [
   { label: "Beranda", href: "/" },
   { label: "Layanan", href: "/services" },
   { label: "Tentang", href: "/about" },
-  { label: "Rute", href: "/routes" },
+  { label: "Industri", href: "/industries" },
   { label: "Galeri", href: "/gallery" },
   { label: "FAQ", href: "/faq" },
   { label: "Kontak", href: "/contact" },

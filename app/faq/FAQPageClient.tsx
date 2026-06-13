@@ -20,10 +20,9 @@ export default function FAQPageClient({ items }: FAQPageClientProps) {
 
   // Split into categories
   const categories = [
-    { title: "Umum", items: faqForAccordion.slice(0, 3) },
-    { title: "Layanan", items: faqForAccordion.slice(3, 6) },
-    { title: "Pengiriman", items: faqForAccordion.slice(6, 9) },
-    { title: "Harga & Pembayaran", items: faqForAccordion.slice(9, 12) },
+    { title: "Umum & Layanan Utama", items: faqForAccordion.slice(0, 4) },
+    { title: "Operasional & Jangkauan", items: faqForAccordion.slice(4, 7) },
+    { title: "Keamanan & Pembayaran", items: faqForAccordion.slice(7, 10) },
   ];
 
   return (

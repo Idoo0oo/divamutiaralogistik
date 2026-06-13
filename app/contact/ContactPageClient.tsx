@@ -9,30 +9,23 @@ import Card from "@/components/ui/Card";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import Button from "@/components/ui/Button";
 
-const serviceOptions = [
-  "FCL (Full Container Load)",
-  "LCL (Less Container Load)",
-  "Door-to-Door Delivery",
-  "Warehousing & Storage",
-  "Custom Clearance",
-  "Lainnya",
-];
+
 
 export default function ContactPageClient() {
   const [form, setForm] = useState({
-    name: "", email: "", phone: "", company: "", service: "", message: "",
+    name: "", company: "", message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = encodeURIComponent(
-      `Halo PT Diva Mutiara Logistik,\n\nNama: ${form.name}\nEmail: ${form.email}\nNo. HP: ${form.phone}\nPerusahaan: ${form.company}\nLayanan: ${form.service}\n\nPesan:\n${form.message}\n\nTerima kasih.`
+      `Halo Tim Diva Mutiara Logistik,\n\nSaya ingin berkonsultasi mengenai pengiriman kontainer.\n\n*Nama:* ${form.name}\n*Perusahaan:* ${form.company || '-'}\n\n*Pesan / Kebutuhan:*\n${form.message}`
     );
     window.open(`https://wa.me/62818851514?text=${msg}`, "_blank");
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -83,79 +76,44 @@ export default function ContactPageClient() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-bold text-dark mb-6">Kirim Pesan</h2>
-              <form onSubmit={handleSubmit} className="space-y-5" id="contact-form">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Nama Lengkap *
-                    </label>
-                    <input
-                      id="name" name="name" type="text" required value={form.name} onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark"
-                      placeholder="Nama Anda"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Email *
-                    </label>
-                    <input
-                      id="email" name="email" type="email" required value={form.email} onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark"
-                      placeholder="email@company.com"
-                    />
-                  </div>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
-                      No. Handphone *
-                    </label>
-                    <input
-                      id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark"
-                      placeholder="08XX-XXXX-XXXX"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Nama Perusahaan
-                    </label>
-                    <input
-                      id="company" name="company" type="text" value={form.company} onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark"
-                      placeholder="PT. Company"
-                    />
-                  </div>
-                </div>
+              <h2 className="text-2xl font-bold text-dark mb-6">Mulai Konsultasi</h2>
+              <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-3xl shadow-sm border border-gray-100" id="contact-form">
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Layanan yang Dibutuhkan
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Nama Lengkap *
                   </label>
-                  <select
-                    id="service" name="service" value={form.service} onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark bg-white"
-                  >
-                    <option value="">Pilih layanan...</option>
-                    {serviceOptions.map((opt) => (
-                      <option key={opt} value={opt}>{opt}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Pesan *
-                  </label>
-                  <textarea
-                    id="message" name="message" rows={4} required value={form.message} onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark resize-none"
-                    placeholder="Detail kebutuhan pengiriman Anda..."
+                  <input
+                    id="name" name="name" type="text" required value={form.name} onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-50 rounded-xl border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark"
+                    placeholder="Masukkan nama Anda"
                   />
                 </div>
-                <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
-                  <Send size={18} />
-                  Kirim via WhatsApp
+                
+                <div>
+                  <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Nama Perusahaan (Opsional)
+                  </label>
+                  <input
+                    id="company" name="company" type="text" value={form.company} onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-50 rounded-xl border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark"
+                    placeholder="PT. Perusahaan Anda"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Pesan & Kebutuhan *
+                  </label>
+                  <textarea
+                    id="message" name="message" rows={5} required value={form.message} onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-50 rounded-xl border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark resize-none"
+                    placeholder="Ceritakan detail rute atau kebutuhan mobilitas kontainer Anda..."
+                  />
+                </div>
+
+                <Button type="submit" variant="primary" size="lg" className="w-full justify-center mt-2">
+                  <Send size={18} className="mr-2" />
+                  Kirim Pesan via WhatsApp
                 </Button>
               </form>
             </motion.div>

@@ -126,13 +126,8 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+          <div className="flex items-center justify-center text-white/40 text-sm text-center">
             <p>© {new Date().getFullYear()} PT Diva Mutiara Logistik. All rights reserved.</p>
-            <div className="flex items-center gap-4">
-              <span>NPWP: XX.XXX.XXX.X-XXX.XXX</span>
-              <span className="hidden sm:inline">•</span>
-              <span>SIUP: XXXXX</span>
-            </div>
           </div>
         </div>
       </div>

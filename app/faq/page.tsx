@@ -4,26 +4,24 @@ import FAQPageClient from "./FAQPageClient";
 export const metadata: Metadata = {
   title: "Pertanyaan Umum (FAQ)",
   description:
-    "Jawaban pertanyaan umum seputar pengiriman kontainer, layanan FCL/LCL, estimasi waktu, harga, dan prosedur pengiriman PT Diva Mutiara Logistik.",
+    "Jawaban pertanyaan umum seputar layanan Container Haulage, armada Prime Mover, prosedur pengiriman, dan jaminan keamanan kargo PT Diva Mutiara Logistik.",
   openGraph: {
     title: "FAQ — PT Diva Mutiara Logistik",
-    description: "Pertanyaan umum seputar pengiriman kontainer dan layanan logistik kami.",
+    description: "Pertanyaan umum seputar layanan logistik dan mobilitas kontainer kami.",
   },
 };
 
 const faqItems = [
-  { q: "Apa itu PT Diva Mutiara Logistik?", a: "PT Diva Mutiara Logistik adalah perusahaan jasa pengiriman kontainer domestik yang melayani rute-rute strategis di Pulau Jawa. Kami menyediakan layanan FCL, LCL, Door-to-Door, Warehousing, dan Custom Clearance." },
-  { q: "Dimana lokasi kantor PT Diva Mutiara Logistik?", a: "Kantor terdaftar kami berada di Cimone Mas Permai 2, Jl. Dilli Blok C 11 No.5, Tangerang. Kantor operasional berada di Jl. Sukapura, Kec. Cilincing, Jakarta Utara, DKI Jakarta 14140." },
-  { q: "Apa jam operasional kantor?", a: "Kantor kami beroperasi pada hari Senin sampai Jumat, pukul 09:00 - 17:00 WIB. Sabtu, Minggu, dan hari libur nasional tutup." },
-  { q: "Apa perbedaan FCL dan LCL?", a: "FCL (Full Container Load) adalah pengiriman menggunakan kontainer penuh yang didedikasikan untuk cargo Anda. LCL (Less than Container Load) adalah pengiriman parsial dimana cargo Anda berbagi kontainer dengan cargo lain untuk efisiensi biaya." },
-  { q: "Berapa minimum volume untuk menggunakan layanan FCL?", a: "Kami merekomendasikan FCL untuk volume di atas 15 CBM. Untuk volume dibawah itu, layanan LCL lebih efisien dari segi biaya." },
-  { q: "Apakah tersedia layanan Door-to-Door?", a: "Ya, kami menyediakan layanan Door-to-Door yang mencakup pengambilan cargo dari lokasi pengirim dan pengantaran langsung ke lokasi tujuan." },
-  { q: "Berapa lama estimasi waktu pengiriman?", a: "Estimasi waktu bervariasi tergantung rute. Untuk area Jabodetabek bisa same day, Jakarta-Semarang 1-2 hari, Jakarta-Surabaya 2-3 hari. Untuk detail lebih lanjut, silakan cek halaman Rute kami." },
-  { q: "Rute pengiriman apa saja yang tersedia?", a: "Saat ini kami melayani pengiriman ke seluruh kota utama di Pulau Jawa termasuk Jakarta (hub utama), Surabaya, Semarang, Bandung, Yogyakarta, Solo, Cirebon, Malang, Tangerang, Bekasi, dan Karawang." },
-  { q: "Bagaimana cara menghitung kubikasi cargo?", a: "Kubikasi dihitung dengan rumus: Panjang (m) × Lebar (m) × Tinggi (m) × Jumlah Unit = Total CBM. Tim kami siap membantu menghitung dan merekomendasikan tipe kontainer yang paling sesuai." },
-  { q: "Bagaimana cara mendapatkan penawaran harga?", a: "Anda bisa menghubungi kami via WhatsApp atau melalui form kontak di halaman Hubungi Kami. Tim kami akan memberikan penawaran harga terbaik sesuai kebutuhan pengiriman Anda." },
-  { q: "Metode pembayaran apa saja yang tersedia?", a: "Kami menerima pembayaran melalui transfer bank (BCA, Mandiri, BNI, BRI). Detail pembayaran akan diinformasikan pada invoice penawaran." },
-  { q: "Apakah harga sudah termasuk asuransi?", a: "Asuransi pengiriman tersedia sebagai layanan tambahan. Kami sangat menyarankan asuransi untuk cargo bernilai tinggi. Detail premi akan diinformasikan dalam penawaran." },
+  { q: "Apa itu layanan utama PT Diva Mutiara Logistik?", a: "Kami adalah perusahaan penyedia jasa Container Haulage (trucking kontainer darat). Kami berfokus pada mobilitas dan penarikan kontainer dari pelabuhan (Port) ke kawasan pergudangan (Warehouse) atau sebaliknya, untuk berbagai sektor industri." },
+  { q: "Dimana lokasi kantor operasional PT Diva Mutiara Logistik?", a: "Kantor terdaftar kami berada di Tangerang, namun pusat operasional dan pool armada kami berpusat di Jl. Sukapura, Kec. Cilincing, Jakarta Utara, sangat strategis dan dekat dengan Pelabuhan Tanjung Priok." },
+  { q: "Apakah armada truk milik perusahaan sendiri?", a: "Ya, seluruh operasional haulage didukung oleh armada Prime Mover dan sasis (20ft & 40ft) milik perusahaan sendiri. Hal ini menjamin ketersediaan, perawatan yang terjamin, serta keamanan kargo Anda." },
+  { q: "Apa saja jenis kontainer yang bisa ditarik?", a: "Kami dapat menangani penarikan kontainer standar (Dry Container) berukuran 20ft dan 40ft, High Cube, Flat Rack, hingga kontainer khusus seperti Reefer dan ISO Tank." },
+  { q: "Apakah melayani Custom Clearance di pelabuhan?", a: "Tentu. Selain menyediakan truk, kami juga memiliki tim ahli yang mengurus Custom Clearance (PPJK) untuk melancarkan proses bongkar muat kontainer ekspor dan impor Anda di pelabuhan." },
+  { q: "Apakah jangkauan pengiriman hanya di Pulau Jawa?", a: "Meski basis operasional utama kami ada di sekitar pelabuhan utama Jawa, layanan haulage kami bersifat fleksibel dan dapat menyesuaikan dengan kebutuhan rute rantai pasok industri Anda di seluruh Nusantara melalui koordinasi jaringan mitra kami." },
+  { q: "Bagaimana standar keamanan kargo selama perjalanan?", a: "Keamanan adalah prioritas. Armada kami dikemudikan oleh sopir berlisensi dan berpengalaman. Truk dilengkapi fasilitas standar keamanan pengikatan (twist lock) yang kokoh untuk mencegah guncangan ekstrem." },
+  { q: "Apakah layanan mencakup asuransi barang?", a: "Layanan dasar kami mencakup standar asuransi perjalanan armada darat. Namun untuk kargo bernilai tinggi (seperti elektronik atau alat medis), kami siap memfasilitasi asuransi pengiriman pihak ketiga dengan premi tambahan." },
+  { q: "Bagaimana cara mendapatkan penawaran harga (Quotation)?", a: "Harga sangat bergantung pada jarak (titik muat ke titik bongkar), jenis kontainer, dan berat muatan. Silakan hubungi kami melalui tombol WhatsApp untuk mendapatkan penawaran yang cepat dan transparan." },
+  { q: "Metode pembayaran apa yang didukung?", a: "Kami menerima pembayaran melalui transfer bank antar-perusahaan (BCA, Mandiri, BNI, BRI). Sistem term of payment (TOP) dapat dinegosiasikan untuk kontrak kerja sama B2B jangka panjang." },
 ];
 
 const faqJsonLd = {
