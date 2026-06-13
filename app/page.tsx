@@ -167,7 +167,6 @@ export default function HomePage() {
                 {[
                   { value: "500+", label: "Pengiriman" },
                   { value: "150+", label: "Klien Aktif" },
-                  { value: "20+", label: "Unit Armada" },
                   { value: "Rute", label: "Fleksibel" },
                 ].map((badge) => (
                   <div key={badge.label} className="text-center flex-1 min-w-[80px] sm:min-w-0">

@@ -161,7 +161,6 @@ export default function GalleryPageClient() {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto">
             {[
-              { value: "20+", label: "Unit Armada" },
               { value: "100+", label: "Kontainer" },
               { value: "2", label: "Gudang" },
             ].map((stat) => (
