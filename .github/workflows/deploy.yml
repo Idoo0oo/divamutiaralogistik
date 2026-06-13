@@ -1,0 +1,36 @@
+name: Deploy Next.js to cPanel via FTP
+
+on:
+  push:
+    branches:
+      - main # Akan berjalan otomatis setiap kali ada git push ke branch main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Menggunakan Node.js versi 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js Static Export
+        run: npm run build
+
+      - name: Sync files to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ./ # Karena akun FTP sudah kita arahkan langsung ke public_html
+          dangerous-clean-slate: false # Set true jika ingin menghapus file lama otomatis (hati-hati)
