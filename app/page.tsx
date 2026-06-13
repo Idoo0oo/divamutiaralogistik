@@ -27,19 +27,19 @@ const valueProps = [
     icon: DollarSign,
     title: "Harga Kompetitif",
     description:
-      "Penawaran harga terbaik di rute-rute strategis Pulau Jawa, transparan tanpa biaya tersembunyi.",
+      "Penawaran harga logistik terbaik dan paling masuk akal, transparan tanpa biaya tersembunyi.",
   },
   {
     icon: MapPin,
-    title: "Fokus Rute Spesifik",
+    title: "Rute Fleksibel",
     description:
-      "Spesialisasi pada rute operasional pelabuhan ke gudang (contoh: GTM ke JICT) untuk efisiensi yang lebih tinggi.",
+      "Spesialisasi pada mobilitas kontainer antar pelabuhan dan kawasan pergudangan untuk efisiensi waktu yang tinggi.",
   },
   {
     icon: Shield,
     title: "Armada Terjamin",
     description:
-      "Kontainer dan armada yang terawat dengan standar keamanan tinggi untuk keselamatan cargo Anda.",
+      "Kondisi truk dan sasis selalu terawat dengan standar keamanan tinggi untuk keselamatan kargo Anda.",
   },
 ];
 
@@ -47,13 +47,19 @@ const services = [
   {
     icon: ContainerIcon,
     title: "Port-to-Port",
-    description: "Pengiriman kontainer antar pelabuhan utama (contoh: GTM ke JICT).",
+    description: "Pengiriman kontainer antar pelabuhan utama secara cepat dan efisien.",
     href: "https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer",
   },
   {
     icon: Warehouse,
     title: "Port-to-Warehouse",
     description: "Pengambilan kontainer dari pelabuhan untuk diantar langsung ke gudang Anda.",
+    href: "https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer",
+  },
+  {
+    icon: Package,
+    title: "Warehouse-to-Port",
+    description: "Layanan muat kontainer dari gudang untuk diserahkan ke pihak pelabuhan.",
     href: "https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer",
   },
   {
@@ -77,8 +83,17 @@ export default function HomePage() {
       {/* ========== HERO ========== */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-navy" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/70" />
+        <div className="absolute inset-0">
+          <Image 
+            src="/images/hero_bg_port.png"
+            alt="Logistik Kontainer Pelabuhan"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-transparent" />
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-primary blur-[120px]" />
@@ -93,15 +108,14 @@ export default function HomePage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-                Spesialis Pengiriman{" "}
-                <span className="text-primary">Kontainer</span>{" "}
-                Antar Pelabuhan
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.2] mb-6">
+                Mitra Terpercaya{" "}
+                <span className="text-primary">Logistik Kontainer</span>{" "}
+                Anda
               </h1>
 
-              <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
-                PT Diva Mutiara Logistik melayani jasa pengangkutan kontainer skala operasional, 
-                fokus pada rute Port-to-Port dan Port-to-Warehouse dengan cepat dan aman.
+              <p className="text-base text-white/70 leading-relaxed mb-8 max-w-xl">
+                PT Diva Mutiara Logistik hadir sebagai mitra logistik andalan Anda. Kami berspesialisasi dalam mobilitas kontainer darat antar pelabuhan dan area pergudangan, memastikan setiap pengiriman berjalan efisien, aman, dan tepat waktu.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -110,33 +124,18 @@ export default function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="primary" 
-                  size="lg"
+                  size="md"
                 >
                   Konsultasi via WhatsApp
                   <ArrowRight size={18} />
                 </Button>
               </div>
 
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-6 lg:gap-10 justify-center lg:justify-start">
-                {[
-                  { value: "500+", label: "Pengiriman" },
-                  { value: "150+", label: "Klien Aktif" },
-                  { value: "Rute", label: "Pelabuhan - Gudang" },
-                ].map((badge) => (
-                  <div key={badge.label} className="text-center lg:text-left min-w-[90px] sm:min-w-0">
-                    <div className="text-2xl font-bold text-white">
-                      {badge.value}
-                    </div>
-                    <div className="text-white/50 text-sm">{badge.label}</div>
-                  </div>
-                ))}
-              </div>
             </motion.div>
 
-            {/* Right side — decorative container illustration */}
+            {/* Right side — decorative container illustration & Trust Badges */}
             <motion.div
-              className="hidden lg:flex items-center justify-center"
+              className="flex flex-col items-center justify-center w-full gap-10 mt-10 lg:mt-0"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -161,6 +160,23 @@ export default function HomePage() {
                     ))}
                   </div>
                 </div>
+              </div>
+
+              {/* Trust Badges Restored Here */}
+              <div className="flex flex-wrap gap-6 justify-center w-full max-w-lg bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6">
+                {[
+                  { value: "500+", label: "Pengiriman" },
+                  { value: "150+", label: "Klien Aktif" },
+                  { value: "20+", label: "Unit Armada" },
+                  { value: "Rute", label: "Fleksibel" },
+                ].map((badge) => (
+                  <div key={badge.label} className="text-center flex-1 min-w-[80px] sm:min-w-0">
+                    <div className="text-xl font-bold text-white mb-1">
+                      {badge.value}
+                    </div>
+                    <div className="text-white/50 text-xs uppercase tracking-wider">{badge.label}</div>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -243,16 +259,15 @@ export default function HomePage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px]" />
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  Rute Utama Tercepat
+                  Rute Operasional Fleksibel
                 </div>
-                <h3 className="text-3xl font-bold mb-4">GTM <ArrowRight className="inline mx-2 text-primary" /> JICT</h3>
+                <h3 className="text-3xl font-bold mb-4">Pelabuhan <ArrowRight className="inline mx-2 text-primary" /> Gudang</h3>
                 <p className="text-white/70 leading-relaxed mb-8">
-                  Keahlian utama kami terletak pada rute pergudangan dan pelabuhan, khususnya antara Pelabuhan GTM dan JICT. Dengan armada truk yang siap (*standby*), pengiriman kontainer Anda akan ditangani dengan cepat tanpa waktu tunggu yang lama.
+                  Keahlian utama kami terletak pada pengiriman kontainer antar pelabuhan dan kawasan pergudangan secara tepat waktu. Dengan armada truk yang selalu siap (standby), kami menangani pergerakan kontainer Anda ke berbagai tujuan tanpa waktu tunggu yang lama.
                 </p>
                 <ul className="space-y-4 mb-8">
                   {[
-                    "Waktu tempuh efisien",
+                    "Fleksibilitas rute pengiriman",
                     "Armada truk kontainer terawat",
                     "Supir berpengalaman di area pelabuhan",
                   ].map((item, i) => (
@@ -279,10 +294,15 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] rounded-3xl overflow-hidden bg-gray-100 flex items-center justify-center border border-gray-200"
             >
-              <div className="text-center p-6">
-                <Truck size={64} className="mx-auto text-primary/40 mb-4" />
-                <p className="text-gray-500 font-medium">Ilustrasi Armada Operasional</p>
-                <p className="text-gray-400 text-sm mt-2">Diva Mutiara Logistik siap melayani rute pelabuhan</p>
+              <Image 
+                src="/images/container_truck_port.jpg" 
+                alt="Armada Truk Kontainer Diva Mutiara Logistik" 
+                fill 
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6 lg:p-8 text-white">
+                <p className="font-bold text-lg mb-1">Armada Siap Jalan</p>
+                <p className="text-white/80 text-sm">Ilustrasi armada operasional standby kami</p>
               </div>
             </motion.div>
           </div>

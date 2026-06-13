@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { MapPin, Clock, Container as ContainerIcon, ArrowRight, Star, Zap } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -27,10 +28,19 @@ export default function RoutesPageClient() {
   return (
     <>
       {/* Page Hero */}
-      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 bg-navy overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary rounded-full blur-[100px]" />
+            <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <Image 
+            src="/images/hero_bg_port.png"
+            alt="Diva Mutiara Logistik"
+            fill
+            priority
+            className="object-cover object-center"
+          />
         </div>
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "Rute & Jangkauan" }]} />
           <motion.h1

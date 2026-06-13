@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Award,
   Handshake,
@@ -11,6 +12,12 @@ import {
   Weight,
   Box,
   ArrowRight,
+  Truck,
+  Users,
+  Package,
+  Settings,
+  Maximize,
+  Droplet,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -34,43 +41,43 @@ const legality = [
 
 const fleet = [
   {
-    title: "Kontainer 20ft (FCL)",
+    title: "Truk Prime Mover (Head)",
     specs: [
-      { icon: Ruler, label: "Dimensi", value: "5.9m × 2.35m × 2.39m" },
-      { icon: Box, label: "Volume", value: "33.2 CBM" },
-      { icon: Weight, label: "Maks. Berat", value: "28.200 kg" },
+      { icon: Truck, label: "Tipe", value: "Truk Penarik Heavy Duty" },
+      { icon: ShieldCheck, label: "Perawatan", value: "Rutin & Berkala" },
+      { icon: Users, label: "Driver", value: "Berpengalaman" },
     ],
-    description: "Ideal untuk pengiriman menengah, barang elektronik, furniture, dan material industri.",
+    description: "Armada truk tangguh yang siap beroperasi di medan pelabuhan dan kawasan pergudangan industri dengan efisiensi tinggi.",
     color: "from-primary/10 to-primary/5",
   },
   {
-    title: "Kontainer 40ft (FCL)",
+    title: "Sasis Trailer 20ft & 40ft",
     specs: [
-      { icon: Ruler, label: "Dimensi", value: "12.03m × 2.35m × 2.39m" },
-      { icon: Box, label: "Volume", value: "67.7 CBM" },
-      { icon: Weight, label: "Maks. Berat", value: "26.740 kg" },
+      { icon: Ruler, label: "Kapasitas", value: "20 Feet & 40 Feet" },
+      { icon: Weight, label: "Muatan Maks", value: "Sesuai Standar Jalan" },
+      { icon: ShieldCheck, label: "Keamanan", value: "Twist Lock Khusus" },
     ],
-    description: "Cocok untuk volume besar, raw materials, produk manufaktur, dan mesin industri.",
+    description: "Sasis berkualitas tinggi untuk memastikan kontainer terkunci dengan sangat aman selama perjalanan pengiriman Anda.",
     color: "from-navy/10 to-navy/5",
   },
   {
-    title: "LCL (Less Container Load)",
+    title: "Kontainer Dry Cargo (FCL)",
     specs: [
-      { icon: Ruler, label: "Min. Volume", value: "1 CBM" },
-      { icon: Box, label: "Maks. Volume", value: "15 CBM" },
-      { icon: Weight, label: "Fleksibel", value: "Sesuai kebutuhan" },
+      { icon: Box, label: "Jenis", value: "General Cargo" },
+      { icon: Ruler, label: "Ukuran", value: "20ft & 40ft Standard" },
+      { icon: Package, label: "Cocok Untuk", value: "Barang Industri, Ritel" },
     ],
-    description: "Hemat biaya untuk pengiriman parsial. Berbagi kontainer dengan cargo lain.",
+    description: "Kapasitas angkut unggulan kami untuk berbagai kontainer standar yang memuat barang-barang manufaktur umum.",
     color: "from-green-50 to-green-50/50",
   },
   {
-    title: "Special Container",
+    title: "Special Container Handling",
     specs: [
-      { icon: Ruler, label: "Open Top", value: "Untuk barang tinggi" },
-      { icon: Box, label: "Flat Rack", value: "Untuk barang besar" },
-      { icon: Weight, label: "Reefer", value: "Kontainer berpendingin" },
+      { icon: Settings, label: "Reefer", value: "Kontainer Berpendingin" },
+      { icon: Maximize, label: "Open Top", value: "Cargo Oversize" },
+      { icon: Droplet, label: "ISO Tank", value: "Muatan Cair/Gas" },
     ],
-    description: "Kontainer khusus untuk kebutuhan pengiriman spesifik dan cargo oversized.",
+    description: "Kemampuan armada kami untuk menarik dan menangani tipe kontainer khusus dengan keahlian dan penanganan ekstra hati-hati.",
     color: "from-emerald-50 to-emerald-50/50",
   },
 ];
@@ -79,10 +86,19 @@ export default function AboutPageClient() {
   return (
     <>
       {/* Page Hero */}
-      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 bg-navy overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary rounded-full blur-[100px]" />
+            <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <Image 
+            src="/images/hero_bg_port.png"
+            alt="Diva Mutiara Logistik"
+            fill
+            priority
+            className="object-cover object-center"
+          />
         </div>
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "Tentang Kami" }]} />
           <motion.h1
@@ -99,7 +115,7 @@ export default function AboutPageClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Perusahaan jasa pengiriman kontainer domestik terpercaya, melayani rute strategis di seluruh Pulau Jawa.
+            Perusahaan jasa pengiriman kontainer terpercaya, melayani mobilitas kargo operasional antar pelabuhan dan kawasan pergudangan secara efisien.
           </motion.p>
         </Container>
       </section>
@@ -132,11 +148,11 @@ export default function AboutPageClient() {
                 Profil Perusahaan
               </div>
               <h2 className="text-3xl font-bold text-dark mb-6">
-                Berpengalaman dalam Pengiriman Kontainer Domestik
+                Mitra Andalan untuk Mobilitas Kontainer Anda
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  PT Diva Mutiara Logistik adalah perusahaan jasa pengiriman kontainer domestik yang berpengalaman dalam melayani kebutuhan logistik perusahaan-perusahaan di Indonesia, khususnya di Pulau Jawa.
+                  PT Diva Mutiara Logistik adalah mitra strategis untuk layanan mobilitas kontainer yang handal. Kami berpengalaman dalam memastikan kelancaran operasional pengiriman barang dari pelabuhan menuju berbagai titik gudang maupun sebaliknya.
                 </p>
                 <p>
                   Dengan armada yang terawat dan tim profesional, kami berkomitmen untuk memberikan layanan pengiriman yang aman, tepat waktu, dan dengan harga yang kompetitif di setiap rute yang kami layani.
@@ -192,7 +208,7 @@ export default function AboutPageClient() {
       {/* Fleet & Containers */}
       <section className="py-20 lg:py-24 bg-gray-50">
         <Container>
-          <SectionHeading title="Armada & Kontainer" subtitle="Tipe Kontainer yang Kami Sediakan" />
+          <SectionHeading title="Armada & Kemampuan" subtitle="Armada Truk & Jenis Kontainer yang Kami Tangani" />
           <div className="grid md:grid-cols-2 gap-8">
             {fleet.map((item, i) => (
               <Card key={item.title} delay={i * 0.1} className={`bg-gradient-to-br ${item.color} !shadow-md`}>

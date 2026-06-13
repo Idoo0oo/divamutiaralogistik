@@ -21,10 +21,10 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { label: "FCL (Full Container Load)", href: "/services", icon: ContainerIcon },
-  { label: "LCL (Less Container Load)", href: "/services", icon: Package },
-  { label: "Door-to-Door", href: "/services", icon: Truck },
-  { label: "Warehousing", href: "/services", icon: Warehouse },
+  { label: "Port-to-Port", href: "/services", icon: ContainerIcon },
+  { label: "Port-to-Warehouse", href: "/services", icon: Warehouse },
+  { label: "Warehouse-to-Port", href: "/services", icon: Package },
+  { label: "Container Haulage", href: "/services", icon: Truck },
 ];
 
 export default function Footer() {
@@ -43,8 +43,7 @@ export default function Footer() {
               className="h-12 w-auto brightness-0 invert mb-4"
             />
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Perusahaan jasa pengiriman kontainer domestik terpercaya, melayani
-              rute strategis di seluruh Pulau Jawa dengan harga kompetitif.
+              Spesialis jasa angkutan kontainer terpercaya, fokus melayani rute operasional antar pelabuhan dan kawasan pergudangan secara cepat dan efisien.
             </p>
             <div className="flex items-center gap-2 text-white/40 text-xs">
               <Clock size={14} />

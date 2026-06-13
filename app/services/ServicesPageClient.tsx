@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Container as ContainerIcon,
   Package,
@@ -49,6 +50,17 @@ const services = [
     ],
   },
   {
+    icon: Package,
+    title: "Warehouse-to-Port",
+    description: "Layanan muat kontainer dari gudang Anda untuk diserahkan dengan aman ke pihak pelabuhan.",
+    features: [
+      "Penjemputan kontainer dari gudang/pabrik",
+      "Penanganan dokumen keberangkatan",
+      "Koordinasi jadwal kapal/pelabuhan",
+      "Cocok untuk eksportir dan pergerakan logistik outbound",
+    ],
+  },
+  {
     icon: Truck,
     title: "Container Haulage",
     description: "Layanan angkutan darat menggunakan truk kontainer handal untuk rute operasional.",
@@ -80,10 +92,19 @@ export default function ServicesPageClient() {
   return (
     <>
       {/* Page Hero */}
-      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 bg-navy overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary rounded-full blur-[100px]" />
+      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <Image 
+            src="/images/hero_bg_port.png"
+            alt="Diva Mutiara Logistik"
+            fill
+            priority
+            className="object-cover object-center"
+          />
         </div>
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "Layanan" }]} />
           <motion.h1
@@ -99,7 +120,7 @@ export default function ServicesPageClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            Solusi pengiriman kontainer lengkap untuk kebutuhan bisnis Anda di seluruh Pulau Jawa.
+            Solusi logistik darat yang efisien untuk mobilitas kontainer antar pelabuhan dan kawasan pergudangan Anda.
           </motion.p>
         </Container>
       </section>

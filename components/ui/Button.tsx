@@ -17,14 +17,34 @@ interface ButtonProps {
   rel?: string;
 }
 
-const variantStyles: Record<string, React.CSSProperties> = {
-  primary: { backgroundColor: "#E55C24", color: "#ffffff" },
-  secondary: { backgroundColor: "#302725", color: "#ffffff" },
-  outline: { border: "2px solid #E55C24", color: "#E55C24", backgroundColor: "transparent" },
-  ghost: { color: "#374151", backgroundColor: "transparent" },
-  white: { backgroundColor: "#ffffff", color: "#302725" },
-  whiteOutline: { border: "2px solid rgba(255,255,255,0.3)", color: "#ffffff", backgroundColor: "transparent" },
-  whatsapp: { backgroundColor: "#25D366", color: "#ffffff" },
+const variantStyles: Record<string, string> = {
+  primary: "bg-primary text-white border-transparent",
+  secondary: "bg-dark text-white border-transparent",
+  outline: "border-2 border-primary text-primary bg-transparent",
+  ghost: "text-gray-700 bg-transparent border-transparent",
+  white: "bg-white text-dark border-transparent",
+  whiteOutline: "border-2 border-white/30 text-white bg-transparent",
+  whatsapp: "bg-[#25D366] text-white border-transparent",
+};
+
+const liquidColors: Record<string, string> = {
+  primary: "bg-[#CC4F1D]", // primary-hover
+  secondary: "bg-primary",
+  outline: "bg-primary",
+  ghost: "bg-primary",
+  white: "bg-primary",
+  whiteOutline: "bg-primary",
+  whatsapp: "bg-[#1DA851]", // darker green
+};
+
+const textHoverColors: Record<string, string> = {
+  primary: "group-hover:text-white",
+  secondary: "group-hover:text-white",
+  outline: "group-hover:text-white",
+  ghost: "group-hover:text-white",
+  white: "group-hover:text-white",
+  whiteOutline: "group-hover:text-white",
+  whatsapp: "group-hover:text-white",
 };
 
 const sizes = {
@@ -46,9 +66,21 @@ export default function Button({
   target,
   rel,
 }: ButtonProps) {
-  const baseClasses = `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${sizes[size]} ${className} ${disabled ? "opacity-50 cursor-not-allowed" : ""} hover:opacity-90 hover:shadow-lg`;
+  // We use Tailwind classes for colors instead of inline styles now for better hover control
+  const baseClasses = `relative overflow-hidden group inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 cursor-pointer ${sizes[size]} ${variantStyles[variant]} ${className} ${disabled ? "opacity-50 cursor-not-allowed" : "hover:shadow-lg"}`;
 
-  const style = variantStyles[variant] || variantStyles.primary;
+  const liquidBg = liquidColors[variant] || liquidColors.primary;
+  const textHover = textHoverColors[variant] || "group-hover:text-white";
+
+  const LiquidLayer = () => (
+    <div className={`absolute top-[100%] left-[-20%] w-[140%] h-[200%] rounded-[40%] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:top-[-50%] group-hover:rounded-none z-0 ${liquidBg}`} />
+  );
+
+  const ContentLayer = () => (
+    <span className={`relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 ${textHover}`}>
+      {children}
+    </span>
+  );
 
   if (href) {
     return (
@@ -56,13 +88,13 @@ export default function Button({
         href={href}
         id={id}
         className={baseClasses}
-        style={style}
         whileHover={disabled ? {} : { scale: 1.02 }}
         whileTap={disabled ? {} : { scale: 0.98 }}
         target={target}
         rel={rel}
       >
-        {children}
+        <LiquidLayer />
+        <ContentLayer />
       </motion.a>
     );
   }
@@ -74,11 +106,11 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       className={baseClasses}
-      style={style}
       whileHover={disabled ? {} : { scale: 1.02 }}
       whileTap={disabled ? {} : { scale: 0.98 }}
     >
-      {children}
+      <LiquidLayer />
+      <ContentLayer />
     </motion.button>
   );
 }
