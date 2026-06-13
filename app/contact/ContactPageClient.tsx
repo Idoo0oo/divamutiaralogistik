@@ -27,7 +27,7 @@ export default function ContactPageClient() {
     const msg = encodeURIComponent(
       `Halo PT Diva Mutiara Logistik,\n\nNama: ${form.name}\nEmail: ${form.email}\nNo. HP: ${form.phone}\nPerusahaan: ${form.company}\nLayanan: ${form.service}\n\nPesan:\n${form.message}\n\nTerima kasih.`
     );
-    window.open(`https://wa.me/62XXXXXXXXXXX?text=${msg}`, "_blank");
+    window.open(`https://wa.me/62818851514?text=${msg}`, "_blank");
   };
 
   const handleChange = (
@@ -188,7 +188,7 @@ export default function ContactPageClient() {
                   </div>
                   <div>
                     <h3 className="font-bold text-dark mb-1">Telepon</h3>
-                    <a href="tel:+62XXXXXXXXXXX" className="text-primary font-medium text-sm hover:underline">+62-XXX-XXXX-XXXX</a>
+                    <a href="tel:+62818851514" className="text-primary font-medium text-sm hover:underline">+62-818-851-514</a>
                   </div>
                 </div>
               </Card>
@@ -200,7 +200,7 @@ export default function ContactPageClient() {
                   </div>
                   <div>
                     <h3 className="font-bold text-dark mb-1">Email</h3>
-                    <a href="mailto:info@divamutiaralogistik.com" className="text-primary font-medium text-sm hover:underline">info@divamutiaralogistik.com</a>
+                    <a href="mailto:support@divamutiaralogistik.com" className="text-primary font-medium text-sm hover:underline">support@divamutiaralogistik.com</a>
                   </div>
                 </div>
               </Card>
@@ -220,7 +220,7 @@ export default function ContactPageClient() {
 
               {/* Quick WhatsApp */}
               <Button
-                href="https://wa.me/62XXXXXXXXXXX"
+                href="https://wa.me/62818851514"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="whatsapp"
@@ -240,7 +240,7 @@ export default function ContactPageClient() {
         <Container>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2!2d106.93!3d-6.11!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDYnMzYuMCJTIDEwNsKwNTUnNDguMCJF!5e0!3m2!1sid!2sid!4v1&q=6P58RWXQ%2B8G"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.84401213908!2d106.9362210744091!3d-6.151639960296736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b007fc91e13%3A0xf5a2530962e89b1!2sGarasi%20Marsk!5e0!3m2!1sid!2sid!4v1781353732531!5m2!1sid!2sid"
               width="100%"
               height="400"
               style={{ border: 0 }}

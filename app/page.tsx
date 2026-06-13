@@ -31,9 +31,9 @@ const valueProps = [
   },
   {
     icon: MapPin,
-    title: "Rute Jawa Strategis",
+    title: "Fokus Rute Spesifik",
     description:
-      "Jaringan pengiriman yang mencakup kota-kota utama di seluruh Pulau Jawa, dari Jakarta hingga Surabaya.",
+      "Spesialisasi pada rute operasional pelabuhan ke gudang (contoh: GTM ke JICT) untuk efisiensi yang lebih tinggi.",
   },
   {
     icon: Shield,
@@ -46,27 +46,21 @@ const valueProps = [
 const services = [
   {
     icon: ContainerIcon,
-    title: "FCL (Full Container Load)",
-    description: "Pengiriman kontainer penuh 20ft & 40ft untuk volume besar.",
-    href: "/services",
-  },
-  {
-    icon: Package,
-    title: "LCL (Less Container Load)",
-    description: "Pengiriman parsial hemat biaya dengan sistem berbagi kontainer.",
-    href: "/services",
-  },
-  {
-    icon: Truck,
-    title: "Door-to-Door",
-    description: "Layanan pengambilan & pengantaran langsung ke lokasi tujuan.",
-    href: "/services",
+    title: "Port-to-Port",
+    description: "Pengiriman kontainer antar pelabuhan utama (contoh: GTM ke JICT).",
+    href: "https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer",
   },
   {
     icon: Warehouse,
-    title: "Warehousing",
-    description: "Fasilitas penyimpanan sementara di lokasi-lokasi strategis.",
-    href: "/services",
+    title: "Port-to-Warehouse",
+    description: "Pengambilan kontainer dari pelabuhan untuk diantar langsung ke gudang Anda.",
+    href: "https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer",
+  },
+  {
+    icon: Truck,
+    title: "Container Haulage",
+    description: "Layanan angkutan truk kontainer handal untuk rute jarak dekat & menengah.",
+    href: "https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer",
   },
 ];
 
@@ -100,28 +94,26 @@ export default function HomePage() {
             >
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-                Solusi Pengiriman{" "}
+                Spesialis Pengiriman{" "}
                 <span className="text-primary">Kontainer</span>{" "}
-                Nasional Terpercaya
+                Antar Pelabuhan
               </h1>
 
               <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
-                PT Diva Mutiara Logistik menyediakan jasa pengiriman kontainer
-                domestik dengan harga kompetitif di rute-rute strategis. Layanan
-                FCL & LCL untuk kebutuhan bisnis Anda.
+                PT Diva Mutiara Logistik melayani jasa pengangkutan kontainer skala operasional, 
+                fokus pada rute Port-to-Port dan Port-to-Warehouse dengan cepat dan aman.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Button href="/contact" variant="primary" size="lg">
-                  Hubungi Kami
-                  <ArrowRight size={18} />
-                </Button>
-                <Button
-                  href="/services"
-                  variant="whiteOutline"
+                <Button 
+                  href="https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary" 
                   size="lg"
                 >
-                  Lihat Layanan
+                  Konsultasi via WhatsApp
+                  <ArrowRight size={18} />
                 </Button>
               </div>
 
@@ -130,7 +122,7 @@ export default function HomePage() {
                 {[
                   { value: "500+", label: "Pengiriman" },
                   { value: "150+", label: "Klien Aktif" },
-                  { value: "15+", label: "Rute Jawa" },
+                  { value: "Rute", label: "Pelabuhan - Gudang" },
                 ].map((badge) => (
                   <div key={badge.label} className="text-center lg:text-left min-w-[90px] sm:min-w-0">
                     <div className="text-2xl font-bold text-white">
@@ -234,6 +226,69 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* ========== SPESIALISASI RUTE ========== */}
+      <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
+        <Container>
+          <SectionHeading
+            title="Spesialisasi Rute"
+            subtitle="Fokus Layanan Rute Pelabuhan"
+          />
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-navy rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px]" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  Rute Utama Tercepat
+                </div>
+                <h3 className="text-3xl font-bold mb-4">GTM <ArrowRight className="inline mx-2 text-primary" /> JICT</h3>
+                <p className="text-white/70 leading-relaxed mb-8">
+                  Keahlian utama kami terletak pada rute pergudangan dan pelabuhan, khususnya antara Pelabuhan GTM dan JICT. Dengan armada truk yang siap (*standby*), pengiriman kontainer Anda akan ditangani dengan cepat tanpa waktu tunggu yang lama.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  {[
+                    "Waktu tempuh efisien",
+                    "Armada truk kontainer terawat",
+                    "Supir berpengalaman di area pelabuhan",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle className="text-primary shrink-0 mt-1" size={18} />
+                      <span className="text-white/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  href="https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary"
+                >
+                  Pesan Rute Ini
+                </Button>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] rounded-3xl overflow-hidden bg-gray-100 flex items-center justify-center border border-gray-200"
+            >
+              <div className="text-center p-6">
+                <Truck size={64} className="mx-auto text-primary/40 mb-4" />
+                <p className="text-gray-500 font-medium">Ilustrasi Armada Operasional</p>
+                <p className="text-gray-400 text-sm mt-2">Diva Mutiara Logistik siap melayani rute pelabuhan</p>
+              </div>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+
       {/* ========== STATS COUNTER ========== */}
       <section className="py-20 lg:py-24 bg-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -292,21 +347,14 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                href="/contact"
+                href="https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer"
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="white"
                 size="lg"
               >
-                Minta Penawaran
+                Chat WhatsApp Admin
                 <ArrowRight size={18} />
-              </Button>
-              <Button
-                href="https://wa.me/62XXXXXXXXXXX"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="whiteOutline"
-                size="lg"
-              >
-                Chat WhatsApp
               </Button>
             </div>
           </motion.div>

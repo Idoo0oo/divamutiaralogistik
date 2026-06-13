@@ -92,18 +92,18 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Kontak</h3>
             <div className="space-y-4">
               <a
-                href="tel:+62XXXXXXXXXXX"
+                href="tel:+62818851514"
                 className="flex items-start gap-3 text-white/60 hover:text-primary text-sm transition-colors group"
               >
                 <Phone size={16} className="mt-0.5 flex-shrink-0" />
-                <span>+62-XXX-XXXX-XXXX</span>
+                <span>+62-818-851-514</span>
               </a>
               <a
-                href="mailto:info@divamutiaralogistik.com"
+                href="mailto:support@divamutiaralogistik.com"
                 className="flex items-start gap-3 text-white/60 hover:text-primary text-sm transition-colors"
               >
                 <Mail size={16} className="mt-0.5 flex-shrink-0" />
-                <span>info@divamutiaralogistik.com</span>
+                <span>support@divamutiaralogistik.com</span>
               </a>
               <div className="flex items-start gap-3 text-white/60 text-sm">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />

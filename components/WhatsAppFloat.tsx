@@ -12,7 +12,7 @@ export default function WhatsAppFloat() {
     return () => clearTimeout(timer);
   }, []);
 
-  const phoneNumber = "62XXXXXXXXXXX"; // Placeholder
+  const phoneNumber = "62818851514"; // Placeholder
   const message = encodeURIComponent(
     "Halo PT Diva Mutiara Logistik, saya ingin menanyakan informasi tentang layanan pengiriman kontainer. Terima kasih."
   );

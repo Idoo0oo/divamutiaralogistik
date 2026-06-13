@@ -71,7 +71,7 @@ const fleet = [
       { icon: Weight, label: "Reefer", value: "Kontainer berpendingin" },
     ],
     description: "Kontainer khusus untuk kebutuhan pengiriman spesifik dan cargo oversized.",
-    color: "from-purple-50 to-purple-50/50",
+    color: "from-emerald-50 to-emerald-50/50",
   },
 ];
 
@@ -231,8 +231,14 @@ export default function AboutPageClient() {
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
               Hubungi kami untuk konsultasi gratis dan dapatkan solusi pengiriman terbaik.
             </p>
-            <Button href="/contact" variant="white" size="lg">
-              Hubungi Kami <ArrowRight size={18} />
+            <Button 
+              href="https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer" 
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="white" 
+              size="lg"
+            >
+              Chat via WhatsApp <ArrowRight size={18} />
             </Button>
           </motion.div>
         </Container>

@@ -28,57 +28,35 @@ import Button from "@/components/ui/Button";
 const services = [
   {
     icon: ContainerIcon,
-    title: "FCL (Full Container Load)",
-    description: "Pengiriman menggunakan kontainer penuh, tersedia ukuran 20ft dan 40ft untuk kebutuhan volume besar.",
+    title: "Port-to-Port",
+    description: "Pengiriman kontainer antar pelabuhan utama, cocok untuk kebutuhan pergerakan logistik laut yang efisien.",
     features: [
-      "Kontainer 20ft (33 CBM) & 40ft (67 CBM)",
-      "Pengiriman dedicated tanpa berbagi",
-      "Keamanan cargo lebih terjamin",
-      "Cocok untuk volume di atas 15 CBM",
-    ],
-  },
-  {
-    icon: Package,
-    title: "LCL (Less Container Load)",
-    description: "Pengiriman parsial dengan sistem berbagi kontainer, solusi hemat untuk volume kecil hingga menengah.",
-    features: [
-      "Minimum pengiriman 1 CBM",
-      "Berbagi kontainer untuk efisiensi biaya",
-      "Cocok untuk UKM dan pengiriman reguler",
-      "Jadwal konsolidasi rutin",
-    ],
-  },
-  {
-    icon: Truck,
-    title: "Door-to-Door Delivery",
-    description: "Layanan pengambilan dari lokasi pengirim dan pengantaran langsung ke lokasi tujuan.",
-    features: [
-      "Pengambilan dari gudang/pabrik",
-      "Pengantaran langsung ke tujuan",
-      "Tracking real-time",
-      "Satu PIC untuk setiap pengiriman",
+      "Fokus pada rute pelabuhan utama",
+      "Penanganan dokumen pelabuhan",
+      "Lead time pengiriman terkontrol",
+      "Koordinasi langsung dengan pihak pelabuhan",
     ],
   },
   {
     icon: Warehouse,
-    title: "Warehousing & Storage",
-    description: "Fasilitas penyimpanan sementara di lokasi strategis untuk kebutuhan distribusi Anda.",
+    title: "Port-to-Warehouse",
+    description: "Layanan pengambilan kontainer dari pelabuhan untuk diantar langsung ke gudang tujuan Anda.",
     features: [
-      "Gudang di lokasi strategis Jakarta",
-      "Keamanan 24/7 dengan CCTV",
-      "Manajemen inventory",
-      "Loading & unloading termasuk",
+      "Pengambilan kontainer tepat waktu",
+      "Pengantaran langsung ke area pergudangan",
+      "Standby armada untuk meminimalisir delay",
+      "Cocok untuk importir dan distributor",
     ],
   },
   {
-    icon: FileCheck,
-    title: "Custom Clearance",
-    description: "Pengurusan dokumen dan perizinan pengiriman untuk memastikan kelancaran proses pengiriman.",
+    icon: Truck,
+    title: "Container Haulage",
+    description: "Layanan angkutan darat menggunakan truk kontainer handal untuk rute operasional.",
     features: [
-      "Pengurusan surat jalan",
-      "Dokumen pengiriman lengkap",
-      "Koordinasi dengan pihak terkait",
-      "Konsultasi regulasi pengiriman",
+      "Truk terawat sesuai standar keamanan",
+      "Supir berpengalaman khusus kontainer",
+      "Tracking operasional",
+      "Satu PIC khusus untuk setiap jadwal",
     ],
   },
 ];
@@ -212,10 +190,16 @@ export default function ServicesPageClient() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Konsultasi Gratis</h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Diskusikan kebutuhan pengiriman Anda dengan tim kami dan dapatkan penawaran harga terbaik.
+              Diskusikan kebutuhan pengiriman kontainer Anda dengan tim kami dan dapatkan penawaran harga terbaik.
             </p>
-            <Button href="/contact" variant="white" size="lg">
-              Hubungi Kami <ArrowRight size={18} />
+            <Button 
+              href="https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer" 
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="white" 
+              size="lg"
+            >
+              Chat via WhatsApp <ArrowRight size={18} />
             </Button>
           </motion.div>
         </Container>

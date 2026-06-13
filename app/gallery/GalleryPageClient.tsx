@@ -23,7 +23,7 @@ const galleryItems = [
   { id: 4, category: "fleet", title: "Truk Trailer", color: "from-indigo-500 to-indigo-700" },
   { id: 5, category: "container", title: "Kontainer 40ft", color: "from-red-500 to-red-700" },
   { id: 6, category: "operations", title: "Warehouse", color: "from-teal-500 to-teal-700" },
-  { id: 7, category: "fleet", title: "Armada di Depo", color: "from-purple-500 to-purple-700" },
+  { id: 7, category: "fleet", title: "Armada di Depo", color: "from-sky-500 to-sky-700" },
   { id: 8, category: "container", title: "Container Yard", color: "from-amber-500 to-amber-700" },
   { id: 9, category: "operations", title: "Tim Operasional", color: "from-cyan-500 to-cyan-700" },
 ];
@@ -39,7 +39,7 @@ export default function GalleryPageClient() {
       : galleryItems.filter((item) => item.category === activeCategory);
 
   const lightboxImages = filtered.map((item) => ({
-    src: `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:${item.color.includes('blue') ? '#3b82f6' : item.color.includes('orange') ? '#f97316' : item.color.includes('green') ? '#22c55e' : item.color.includes('indigo') ? '#6366f1' : item.color.includes('red') ? '#ef4444' : item.color.includes('teal') ? '#14b8a6' : item.color.includes('purple') ? '#a855f7' : item.color.includes('amber') ? '#f59e0b' : '#06b6d4'}"/><stop offset="100%" style="stop-color:${item.color.includes('blue') ? '#1d4ed8' : item.color.includes('orange') ? '#c2410c' : item.color.includes('green') ? '#15803d' : item.color.includes('indigo') ? '#4338ca' : item.color.includes('red') ? '#b91c1c' : item.color.includes('teal') ? '#0f766e' : item.color.includes('purple') ? '#7e22ce' : item.color.includes('amber') ? '#d97706' : '#0e7490'}"/></linearGradient></defs><rect fill="url(#g)" width="800" height="600"/><text x="400" y="300" text-anchor="middle" dy=".35em" fill="white" font-size="24" font-family="sans-serif">${item.title}</text></svg>`)}`,
+    src: `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:${item.color.includes('blue') ? '#3b82f6' : item.color.includes('orange') ? '#f97316' : item.color.includes('green') ? '#22c55e' : item.color.includes('indigo') ? '#6366f1' : item.color.includes('red') ? '#ef4444' : item.color.includes('teal') ? '#14b8a6' : item.color.includes('sky') ? '#0ea5e9' : item.color.includes('amber') ? '#f59e0b' : '#06b6d4'}"/><stop offset="100%" style="stop-color:${item.color.includes('blue') ? '#1d4ed8' : item.color.includes('orange') ? '#c2410c' : item.color.includes('green') ? '#15803d' : item.color.includes('indigo') ? '#4338ca' : item.color.includes('red') ? '#b91c1c' : item.color.includes('teal') ? '#0f766e' : item.color.includes('sky') ? '#0369a1' : item.color.includes('amber') ? '#d97706' : '#0e7490'}"/></linearGradient></defs><rect fill="url(#g)" width="800" height="600"/><text x="400" y="300" text-anchor="middle" dy=".35em" fill="white" font-size="24" font-family="sans-serif">${item.title}</text></svg>`)}`,
     alt: item.title,
   }));
 
@@ -79,6 +79,11 @@ export default function GalleryPageClient() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setActiveCategory(cat.id);
+                  }
+                }}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all cursor-pointer ${
                   activeCategory === cat.id
                     ? "bg-primary text-white shadow-lg shadow-primary/25"
@@ -105,9 +110,18 @@ export default function GalleryPageClient() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: i * 0.05 }}
                 className="group cursor-pointer"
+                role="button"
+                tabIndex={0}
                 onClick={() => {
                   setCurrentImageIndex(i);
                   setLightboxOpen(true);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setCurrentImageIndex(i);
+                    setLightboxOpen(true);
+                  }
                 }}
               >
                 <div
@@ -155,9 +169,15 @@ export default function GalleryPageClient() {
         <Container className="text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ingin Lihat Langsung?</h2>
-            <p className="text-white/80 text-lg mb-8">Kunjungi kantor operasional kami atau hubungi untuk informasi lebih lanjut.</p>
-            <Button href="/contact" variant="white" size="lg">
-              Hubungi Kami <ArrowRight size={18} />
+            <p className="text-white/80 text-lg mb-8">Kunjungi kantor operasional kami atau hubungi via WhatsApp untuk informasi lebih lanjut.</p>
+            <Button 
+              href="https://wa.me/62818851514?text=Halo%20admin%20Diva%20Mutiara%20Logistik%2C%20saya%20ingin%20konsultasi%20terkait%20pengiriman%20kontainer" 
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="white" 
+              size="lg"
+            >
+              Chat via WhatsApp <ArrowRight size={18} />
             </Button>
           </motion.div>
         </Container>

@@ -23,8 +23,8 @@ const contactJsonLd = {
     addressRegion: "DKI Jakarta",
     addressCountry: "ID",
   },
-  telephone: "+62-XXX-XXXX-XXXX",
-  email: "info@divamutiaralogistik.com",
+  telephone: "+62-818-851-514",
+  email: "support@divamutiaralogistik.com",
   openingHours: "Mo-Fr 09:00-17:00",
   url: "https://www.divamutiaralogistik.com",
 };
