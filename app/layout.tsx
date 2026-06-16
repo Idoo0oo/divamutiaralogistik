@@ -17,13 +17,12 @@ export const metadata: Metadata = {
     template: "%s | PT Diva Mutiara Logistik",
   },
   description:
-    "PT Diva Mutiara Logistik - Jasa pengiriman kontainer domestik terpercaya dengan harga kompetitif. Layanan FCL & LCL ke seluruh Indonesia.",
+    "PT Diva Mutiara Logistik - Jasa pengiriman kontainer domestik terpercaya dengan harga kompetitif. Layanan Container Haulage, Port-to-Port, dan Port-to-Warehouse terbaik di Indonesia.",
   keywords: [
     "pengiriman kontainer",
     "ekspedisi cargo",
     "logistik nasional",
-    "FCL",
-    "LCL",
+    "container haulage", "port to port", "port to warehouse",
     "shipping kontainer domestik",
     "jasa pengiriman seluruh Indonesia", "logistik antar pulau",
   ],
@@ -100,4 +99,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 
