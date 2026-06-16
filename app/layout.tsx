@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | PT Diva Mutiara Logistik",
   },
   description:
-    "PT Diva Mutiara Logistik - Jasa pengiriman kontainer domestik terpercaya dengan harga kompetitif. Layanan FCL & LCL ke seluruh Pulau Jawa.",
+    "PT Diva Mutiara Logistik - Jasa pengiriman kontainer domestik terpercaya dengan harga kompetitif. Layanan FCL & LCL ke seluruh Indonesia.",
   keywords: [
     "pengiriman kontainer",
     "ekspedisi cargo",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "FCL",
     "LCL",
     "shipping kontainer domestik",
-    "jasa pengiriman Jawa",
+    "jasa pengiriman seluruh Indonesia", "logistik antar pulau",
   ],
   authors: [{ name: "PT Diva Mutiara Logistik" }],
   creator: "PT Diva Mutiara Logistik",
@@ -50,7 +50,7 @@ const organizationJsonLd = {
   url: "https://www.divamutiaralogistik.com",
   logo: "https://www.divamutiaralogistik.com/logo-dml.svg",
   description:
-    "Perusahaan jasa pengiriman kontainer domestik terpercaya di Indonesia, melayani rute strategis di seluruh Pulau Jawa.",
+    "Perusahaan jasa pengiriman kontainer domestik terpercaya di Indonesia, melayani rute strategis di seluruh Indonesia.",
   address: [
     {
       "@type": "PostalAddress",
@@ -100,3 +100,4 @@ export default function RootLayout({
     </html>
   );
 }
+
