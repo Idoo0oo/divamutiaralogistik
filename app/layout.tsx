@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: "/favicon-logo.svg",
+    icon: "/favicon-logo.svg?v=2",
   },
   alternates: {
     canonical: "https://www.divamutiaralogistik.com",
@@ -99,5 +99,6 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
