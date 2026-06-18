@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.divamutiaralogistik.com"),
   title: {
-    default: "PT Diva Mutiara Logistik | Jasa Pengiriman Kontainer Nasional",
+    default: "PT Diva Mutiara Logistik | Jasa Pengiriman Kontainer",
     template: "%s | PT Diva Mutiara Logistik",
   },
   description:
