@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -77,6 +77,8 @@ const organizationJsonLd = {
   },
 };
 
+import AnimationProvider from "@/components/AnimationProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -91,10 +93,12 @@ export default function RootLayout({
             __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppFloat />
+        <AnimationProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsAppFloat />
+        </AnimationProvider>
       </body>
     </html>
   );

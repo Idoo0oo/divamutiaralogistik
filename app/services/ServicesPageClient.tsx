@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Image from "next/image";
 import {
   Container as ContainerIcon,
@@ -96,7 +96,7 @@ export default function ServicesPageClient() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image 
-            src="/images/hero_bg_port.png"
+            src="/images/hero_bg_port.webp"
             alt="Diva Mutiara Logistik"
             fill
             priority
@@ -107,21 +107,21 @@ export default function ServicesPageClient() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "Layanan" }]} />
-          <motion.h1
+          <m.h1
             className="text-4xl md:text-5xl font-extrabold text-white mt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             Layanan Pengiriman Kontainer
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             className="text-white/60 text-lg mt-4 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
             Solusi logistik darat yang efisien untuk mobilitas kontainer antar pelabuhan dan kawasan pergudangan Anda.
-          </motion.p>
+          </m.p>
         </Container>
       </section>
 
@@ -163,7 +163,7 @@ export default function ServicesPageClient() {
           <SectionHeading title="Proses Kerja" subtitle="Alur Pengiriman Kami" />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {processSteps.map((step, i) => (
-              <motion.div
+              <m.div
                 key={step.title}
                 className="text-center"
                 initial={{ opacity: 0, y: 20 }}
@@ -181,7 +181,7 @@ export default function ServicesPageClient() {
                 </div>
                 <h4 className="font-bold text-dark text-sm mb-1">{step.title}</h4>
                 <p className="text-xs text-gray-500">{step.desc}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </Container>
@@ -208,7 +208,7 @@ export default function ServicesPageClient() {
       {/* CTA */}
       <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#F47B2A]">
         <Container className="text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Konsultasi Gratis</h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
               Diskusikan kebutuhan pengiriman kontainer Anda dengan tim kami dan dapatkan penawaran harga terbaik.
@@ -222,7 +222,7 @@ export default function ServicesPageClient() {
             >
               Chat via WhatsApp <ArrowRight size={18} />
             </Button>
-          </motion.div>
+          </m.div>
         </Container>
       </section>
     </>

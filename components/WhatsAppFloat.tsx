@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence  } from 'framer-motion';
 import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppFloat() {
@@ -21,7 +21,7 @@ export default function WhatsAppFloat() {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.a
+        <m.a
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -44,7 +44,7 @@ export default function WhatsAppFloat() {
           <span className="hidden lg:block text-sm font-semibold opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-[200px] transition-all duration-300 overflow-hidden whitespace-nowrap">
             <span className="pr-6 pl-1 inline-block">Chat WhatsApp</span>
           </span>
-        </motion.a>
+        </m.a>
       )}
     </AnimatePresence>
   );

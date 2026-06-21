@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import {
   ArrowRight,
   DollarSign,
@@ -85,7 +85,7 @@ export default function HomePage() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image 
-            src="/images/hero_bg_port.png"
+            src="/images/hero_bg_port.webp"
             alt="Logistik Kontainer Pelabuhan"
             fill
             priority
@@ -102,7 +102,7 @@ export default function HomePage() {
 
         <Container className="relative z-10 pt-32 pb-20 lg:pt-28 lg:pb-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -131,10 +131,10 @@ export default function HomePage() {
                 </Button>
               </div>
 
-            </motion.div>
+            </m.div>
 
             {/* Right side — decorative container illustration & Trust Badges */}
-            <motion.div
+            <m.div
               className="flex flex-col items-center justify-center w-full gap-10 mt-10 lg:mt-0"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -145,7 +145,7 @@ export default function HomePage() {
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
                   <div className="grid grid-cols-2 gap-4">
                     {services.map((s, i) => (
-                      <motion.div
+                      <m.div
                         key={s.title}
                         className="bg-white/5 rounded-2xl p-4 border border-white/5"
                         initial={{ opacity: 0, y: 20 }}
@@ -156,7 +156,7 @@ export default function HomePage() {
                         <p className="text-white/80 text-sm font-medium">
                           {s.title.split(" (")[0]}
                         </p>
-                      </motion.div>
+                      </m.div>
                     ))}
                   </div>
                 </div>
@@ -177,7 +177,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </Container>
       </section>
@@ -249,7 +249,7 @@ export default function HomePage() {
             subtitle="Fokus Layanan Rute Pelabuhan"
           />
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -285,16 +285,16 @@ export default function HomePage() {
                   Pesan Rute Ini
                 </Button>
               </div>
-            </motion.div>
+            </m.div>
             
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] rounded-3xl overflow-hidden bg-gray-100 flex items-center justify-center border border-gray-200"
+              className="relative aspect-video md:aspect-square lg:aspect-auto lg:h-full min-h-[300px] md:min-h-[400px] rounded-3xl overflow-hidden bg-gray-100 flex items-center justify-center border border-gray-200"
             >
               <Image 
-                src="/images/container_truck_port.jpg" 
+                src="/images/container_truck_port.webp" 
                 alt="Armada Truk Kontainer Diva Mutiara Logistik" 
                 fill 
                 className="object-cover"
@@ -303,7 +303,7 @@ export default function HomePage() {
                 <p className="font-bold text-lg mb-1">Armada Siap Jalan</p>
                 <p className="text-white/80 text-sm">Ilustrasi armada operasional standby kami</p>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </Container>
       </section>
@@ -322,7 +322,7 @@ export default function HomePage() {
           />
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
-              <motion.div
+              <m.div
                 key={stat.label}
                 className="text-center"
                 initial={{ opacity: 0, y: 20 }}
@@ -339,7 +339,7 @@ export default function HomePage() {
                   />
                 </div>
                 <p className="text-white/60 text-sm">{stat.label}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </Container>
@@ -351,7 +351,7 @@ export default function HomePage() {
           <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.4%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" />
         </div>
         <Container className="relative z-10 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -376,7 +376,7 @@ export default function HomePage() {
                 <ArrowRight size={18} />
               </Button>
             </div>
-          </motion.div>
+          </m.div>
         </Container>
       </section>
     </>

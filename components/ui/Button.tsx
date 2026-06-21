@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import type { ReactNode } from "react";
 
 interface ButtonProps {
@@ -84,7 +84,7 @@ export default function Button({
 
   if (href) {
     return (
-      <motion.a
+      <m.a
         href={href}
         id={id}
         className={baseClasses}
@@ -95,12 +95,12 @@ export default function Button({
       >
         <LiquidLayer />
         <ContentLayer />
-      </motion.a>
+      </m.a>
     );
   }
 
   return (
-    <motion.button
+    <m.button
       id={id}
       type={type}
       onClick={onClick}
@@ -111,6 +111,6 @@ export default function Button({
     >
       <LiquidLayer />
       <ContentLayer />
-    </motion.button>
+    </m.button>
   );
 }

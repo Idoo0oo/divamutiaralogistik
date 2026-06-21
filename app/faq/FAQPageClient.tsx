@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Image from "next/image";
 import { HelpCircle, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
@@ -32,7 +32,7 @@ export default function FAQPageClient({ items }: FAQPageClientProps) {
         {/* Background */}
         <div className="absolute inset-0">
           <Image 
-            src="/images/hero_bg_port.png"
+            src="/images/hero_bg_port.webp"
             alt="Diva Mutiara Logistik"
             fill
             priority
@@ -43,21 +43,21 @@ export default function FAQPageClient({ items }: FAQPageClientProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "FAQ" }]} />
-          <motion.h1
+          <m.h1
             className="text-4xl md:text-5xl font-extrabold text-white mt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             Pertanyaan Umum (FAQ)
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             className="text-white/60 text-lg mt-4 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
             Temukan jawaban untuk pertanyaan yang sering ditanyakan seputar layanan pengiriman kontainer kami.
-          </motion.p>
+          </m.p>
         </Container>
       </section>
 
@@ -66,7 +66,7 @@ export default function FAQPageClient({ items }: FAQPageClientProps) {
         <Container>
           <div className="max-w-3xl mx-auto space-y-12">
             {categories.map((cat, i) => (
-              <motion.div
+              <m.div
                 key={cat.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +82,7 @@ export default function FAQPageClient({ items }: FAQPageClientProps) {
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6">
                   <Accordion items={cat.items} />
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </Container>
@@ -91,7 +91,7 @@ export default function FAQPageClient({ items }: FAQPageClientProps) {
       {/* CTA */}
       <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#F47B2A]">
         <Container className="text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Pertanyaan Lain?
             </h2>
@@ -101,7 +101,7 @@ export default function FAQPageClient({ items }: FAQPageClientProps) {
             <Button href="/contact" variant="white" size="lg">
               Hubungi Kami <ArrowRight size={18} />
             </Button>
-          </motion.div>
+          </m.div>
         </Container>
       </section>
     </>

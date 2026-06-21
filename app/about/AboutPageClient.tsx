@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Image from "next/image";
 import {
   Award,
@@ -90,7 +90,7 @@ export default function AboutPageClient() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image 
-            src="/images/hero_bg_port.png"
+            src="/images/hero_bg_port.webp"
             alt="Diva Mutiara Logistik"
             fill
             priority
@@ -101,22 +101,22 @@ export default function AboutPageClient() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "Tentang Kami" }]} />
-          <motion.h1
+          <m.h1
             className="text-4xl md:text-5xl font-extrabold text-white mt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             Tentang PT Diva Mutiara Logistik
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             className="text-white/60 text-lg mt-4 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             Perusahaan jasa pengiriman kontainer terpercaya, melayani mobilitas kargo operasional antar pelabuhan dan kawasan pergudangan secara efisien.
-          </motion.p>
+          </m.p>
         </Container>
       </section>
 
@@ -124,7 +124,7 @@ export default function AboutPageClient() {
       <section className="py-20 lg:py-24">
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <m.div
               className="relative aspect-[4/3] bg-gradient-to-br from-primary-50 to-gray-100 rounded-3xl overflow-hidden flex items-center justify-center"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -137,8 +137,8 @@ export default function AboutPageClient() {
                 </div>
                 <p className="text-gray-500 text-sm">Company Photo</p>
               </div>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -164,7 +164,7 @@ export default function AboutPageClient() {
                 <p className="text-sm font-semibold text-dark mb-1 mt-3">Misi</p>
                 <p className="text-sm text-gray-600">Menyediakan layanan pengiriman kontainer yang aman, efisien, dan terjangkau dengan mengutamakan kepuasan pelanggan.</p>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </Container>
       </section>
@@ -236,7 +236,7 @@ export default function AboutPageClient() {
       {/* CTA */}
       <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#F47B2A]">
         <Container className="text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -256,7 +256,7 @@ export default function AboutPageClient() {
             >
               Chat via WhatsApp <ArrowRight size={18} />
             </Button>
-          </motion.div>
+          </m.div>
         </Container>
       </section>
     </>

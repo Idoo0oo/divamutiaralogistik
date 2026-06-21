@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Image from "next/image";
 import { 
   ShoppingCart, 
@@ -80,7 +80,7 @@ export default function IndustriesPageClient() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image 
-            src="/images/hero_bg_port.png"
+            src="/images/hero_bg_port.webp"
             alt="Diva Mutiara Logistik"
             fill
             priority
@@ -91,21 +91,21 @@ export default function IndustriesPageClient() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "Sektor Industri" }]} />
-          <motion.h1
+          <m.h1
             className="text-4xl md:text-5xl font-extrabold text-white mt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             Sektor Industri yang Kami Layani
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             className="text-white/60 text-lg mt-4 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
             Armada truk kami siap mendukung mobilitas berbagai jenis kargo dari beragam sektor industri, memastikan rantai pasok Anda tidak pernah terputus.
-          </motion.p>
+          </m.p>
         </Container>
       </section>
 
@@ -185,7 +185,7 @@ export default function IndustriesPageClient() {
               </div>
               <div className="hidden md:block">
                 <Image 
-                  src="/images/truck_industrial_park.png"
+                  src="/images/truck_industrial_park.webp"
                   alt="Operasional Logistik di Kawasan Industri"
                   width={600}
                   height={400}
@@ -200,7 +200,7 @@ export default function IndustriesPageClient() {
       {/* CTA */}
       <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#F47B2A]">
         <Container className="text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Konsultasikan Kebutuhan Industri Anda</h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
               Setiap industri memiliki tantangan logistik yang berbeda. Hubungi kami untuk mendapatkan solusi mobilitas kontainer yang disesuaikan dengan kebutuhan Anda.
@@ -214,7 +214,7 @@ export default function IndustriesPageClient() {
             >
               Chat via WhatsApp <ArrowRight size={18} />
             </Button>
-          </motion.div>
+          </m.div>
         </Container>
       </section>
     </>

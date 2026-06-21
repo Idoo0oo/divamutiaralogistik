@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence  } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface LightboxModalProps {
@@ -44,7 +44,7 @@ export default function LightboxModal({
   return (
     <AnimatePresence>
       {isOpen && images[currentIndex] && (
-        <motion.div
+        <m.div
           className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -80,7 +80,7 @@ export default function LightboxModal({
           )}
 
           {/* Image */}
-          <motion.img
+          <m.img
             key={currentIndex}
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
@@ -105,7 +105,7 @@ export default function LightboxModal({
               <ChevronRight size={28} />
             </button>
           )}
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

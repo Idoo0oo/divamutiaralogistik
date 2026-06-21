@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, Send, Building2, MessageCircle } from "lucide-react";
 import Container from "@/components/ui/Container";
@@ -37,7 +37,7 @@ export default function ContactPageClient() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image 
-            src="/images/hero_bg_port.png"
+            src="/images/hero_bg_port.webp"
             alt="Diva Mutiara Logistik"
             fill
             priority
@@ -48,21 +48,21 @@ export default function ContactPageClient() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "Hubungi Kami" }]} />
-          <motion.h1
+          <m.h1
             className="text-4xl md:text-5xl font-extrabold text-white mt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             Hubungi Kami
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             className="text-white/60 text-lg mt-4 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
             Konsultasi gratis untuk kebutuhan pengiriman kontainer Anda.
-          </motion.p>
+          </m.p>
         </Container>
       </section>
 
@@ -71,7 +71,7 @@ export default function ContactPageClient() {
         <Container>
           <div className="grid lg:grid-cols-[1.2fr,1fr] gap-12">
             {/* Form */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -116,10 +116,10 @@ export default function ContactPageClient() {
                   Kirim Pesan via WhatsApp
                 </Button>
               </form>
-            </motion.div>
+            </m.div>
 
             {/* Info Cards */}
-            <motion.div
+            <m.div
               className="space-y-6"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -198,7 +198,7 @@ export default function ContactPageClient() {
                 <MessageCircle size={20} />
                 Chat WhatsApp Langsung
               </Button>
-            </motion.div>
+            </m.div>
           </div>
         </Container>
       </section>

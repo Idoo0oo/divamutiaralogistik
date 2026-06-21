@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import type { ReactNode } from "react";
 
 interface CardProps {
@@ -21,7 +21,7 @@ export default function Card({
   style,
 }: CardProps) {
   return (
-    <motion.div
+    <m.div
       id={id}
       className={`bg-white rounded-2xl shadow-lg p-6 lg:p-8 ${
         hover ? "hover:shadow-xl" : ""
@@ -34,6 +34,6 @@ export default function Card({
       whileHover={hover ? { y: -4 } : {}}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

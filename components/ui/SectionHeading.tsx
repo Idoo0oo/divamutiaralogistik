@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 
 interface SectionHeadingProps {
   title: string;
@@ -18,7 +18,7 @@ export default function SectionHeading({
   className = "",
 }: SectionHeadingProps) {
   return (
-    <motion.div
+    <m.div
       className={`mb-12 lg:mb-16 ${centered ? "text-center" : ""} ${className}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -43,6 +43,6 @@ export default function SectionHeading({
           {subtitle}
         </h2>
       )}
-    </motion.div>
+    </m.div>
   );
 }

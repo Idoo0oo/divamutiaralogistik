@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Image from "next/image";
 import { Camera, Truck, Container as ContainerIcon, Settings, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
@@ -51,7 +51,7 @@ export default function GalleryPageClient() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image 
-            src="/images/hero_bg_port.png"
+            src="/images/hero_bg_port.webp"
             alt="Diva Mutiara Logistik"
             fill
             priority
@@ -62,21 +62,21 @@ export default function GalleryPageClient() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: "Galeri" }]} />
-          <motion.h1
+          <m.h1
             className="text-4xl md:text-5xl font-extrabold text-white mt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             Galeri & Dokumentasi
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             className="text-white/60 text-lg mt-4 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
             Dokumentasi visual armada, kontainer, dan aktivitas operasional kami.
-          </motion.p>
+          </m.p>
         </Container>
       </section>
 
@@ -107,12 +107,12 @@ export default function GalleryPageClient() {
           </div>
 
           {/* Photo Grid */}
-          <motion.div
+          <m.div
             className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6"
             layout
           >
             {filtered.map((item, i) => (
-              <motion.div
+              <m.div
                 key={item.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -154,9 +154,9 @@ export default function GalleryPageClient() {
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
 
           {/* Stats */}
           <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto">
@@ -176,7 +176,7 @@ export default function GalleryPageClient() {
       {/* CTA */}
       <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#F47B2A]">
         <Container className="text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ingin Lihat Langsung?</h2>
             <p className="text-white/80 text-lg mb-8">Kunjungi kantor operasional kami atau hubungi via WhatsApp untuk informasi lebih lanjut.</p>
             <Button 
@@ -188,7 +188,7 @@ export default function GalleryPageClient() {
             >
               Chat via WhatsApp <ArrowRight size={18} />
             </Button>
-          </motion.div>
+          </m.div>
         </Container>
       </section>
 

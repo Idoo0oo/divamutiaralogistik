@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence  } from 'framer-motion';
 import { ChevronDown } from "lucide-react";
 
 interface AccordionItemProps {
@@ -22,17 +22,17 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
         <span className="text-lg font-semibold text-dark group-hover:text-primary transition-colors pr-4">
           {question}
         </span>
-        <motion.span
+        <m.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
           className="flex-shrink-0 text-primary"
         >
           <ChevronDown size={20} />
-        </motion.span>
+        </m.span>
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -40,7 +40,7 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
             className="overflow-hidden"
           >
             <p className="pb-5 text-gray-600 leading-relaxed">{answer}</p>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>
