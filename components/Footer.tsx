@@ -36,11 +36,11 @@ export default function Footer() {
           {/* Column 1 — Company */}
           <div className="lg:col-span-1">
             <Image
-              src="/logo-dml.svg"
+              src="/logo-dml-full.svg"
               alt="PT Diva Mutiara Logistik"
-              width={160}
-              height={62}
-              className="h-12 w-auto brightness-0 invert mb-4"
+              width={150}
+              height={58}
+              className="h-8 w-auto brightness-0 invert mb-4"
             />
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Spesialis jasa angkutan kontainer terpercaya, fokus melayani rute operasional antar pelabuhan dan kawasan pergudangan secara cepat dan efisien.

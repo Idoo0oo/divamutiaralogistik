@@ -291,7 +291,7 @@ export default function HomePage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative aspect-video md:aspect-square lg:aspect-auto lg:h-full min-h-[300px] md:min-h-[400px] rounded-3xl overflow-hidden bg-gray-100 flex items-center justify-center border border-gray-200"
+              className="relative w-full h-[400px] lg:h-full lg:min-h-[400px] rounded-3xl overflow-hidden bg-gray-100 flex items-center justify-center border border-gray-200"
             >
               <Image 
                 src="/images/container_truck_port.webp" 

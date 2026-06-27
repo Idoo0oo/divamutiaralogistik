@@ -62,10 +62,10 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0" aria-label="PT Diva Mutiara Logistik - Home">
               <Image
-                src="/logo-dml.svg"
+                src="/logo-dml-full.svg"
                 alt="PT Diva Mutiara Logistik"
-                width={160}
-                height={62}
+                width={200}
+                height={78}
                 className={`h-10 lg:h-12 w-auto transition-all duration-300 ${
                   scrolled ? "" : "brightness-0 invert"
                 }`}
@@ -153,10 +153,10 @@ export default function Navbar() {
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-100">
                   <Image
-                    src="/logo-dml.svg"
+                    src="/logo-dml-full.svg"
                     alt="PT Diva Mutiara Logistik"
-                    width={120}
-                    height={47}
+                    width={150}
+                    height={58}
                     className="h-8 w-auto"
                   />
                   <button
